@@ -68,3 +68,19 @@ void duplicateProcess(char *array, char **space)
 	}
 
 }
+
+void enviromentShell(char **space)
+{
+	extern char **environ;
+	int i = 0;
+	if(strcmp(space[0], "env") == 0)
+	{
+		while(environ[i] != NULL)
+		{
+			write(STDOUT_FILENO, environ[i], strlen(environ[i]));
+			write(STDOUT_FILENO, "\n", strlen(environ[i]));
+			i++;
+		}
+	}
+}
+
