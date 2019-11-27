@@ -84,3 +84,14 @@ void enviromentShell(char **space)
 	}
 }
 
+
+void exitof(char **space, char *array)
+{
+	if (strcmp(space[0], "exit") == 0)
+	{
+		free(space);
+		free(array);
+		exit(0);
+	}
+}
+
