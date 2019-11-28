@@ -104,13 +104,18 @@ void enviromentShell(char **space)
 
 
 
+/**
+ * exitof - Split the user input
+ * @space: The set of tokens
+ * @array: Is the string input
+ * Return: Nothing
+ */
 void exitof(char **space, char *array)
 {
-	if (strcmp(space[0], "exit") == 0)
-	{
-		free(space);
-		free(array);
-		exit(0);
-	}
+        if (strcmp(space[0], "exit") == 0)
+        {
+                free(space);
+                free(array);
+                exit(0);
+        }
 }
-
