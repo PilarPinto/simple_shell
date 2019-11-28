@@ -1,39 +1,44 @@
 #include "shell.h"
 
+/**
+ * splitInput - Split the user input
+ * @array: Is the string input
+ * Return: The set of tokens
+ */
 char **splitInput(char *array)
 {
 
-	int counter = 0;
-	char *tokenC;
-	char *token;
-	char **space;
-	char *arrayCopy;
-	int i = 0;
+        int counter = 0;
+        char *tokenC;
+        char *token;
+        char **space;
+        char *arrayCopy;
+        int i = 0;
 
-	arrayCopy = strdup(array);
+        arrayCopy = strdup(array);
 
-	tokenC = strtok(arrayCopy, " \n\t");
+        tokenC = strtok(arrayCopy, " \n\t");
 
-	while (tokenC != NULL)
-	{
-		tokenC = strtok(NULL, " \n\t");
-		counter++;
-	}
-	free(arrayCopy);
+        while (tokenC != NULL)
+        {
+                tokenC = strtok(NULL, " \n\t");
+                counter++;
+        }
+        free(arrayCopy);
 
-	space = malloc(sizeof(char*) * (counter + 1));
+        space = malloc(sizeof(char *) * (counter + 1));
+        token = strtok(array, " \n\t");
 
-       	token = strtok(array, " \n\t");
-
-	while (token != NULL)
-	{
-		space[i] = token;
-		token = strtok(NULL, " \n\t");
-		i++;
-	}
-	space[i] = NULL;
-	return (space);
+        while (token != NULL)
+        {
+                space[i] = token;
+                token = strtok(NULL, " \n\t");
+                i++;
+        }
+        space[i] = NULL;
+        return (space);
 }
+
 
 
 void duplicateProcess(char *array, char **space)
