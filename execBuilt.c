@@ -12,12 +12,10 @@ char **splitInput(char *array)
         char **space;
         char *arrayCopy;
 
-<<<<<<< HEAD
         arrayCopy = strdup(array);
 	tokenC = strtok(arrayCopy, " \n\t");
-=======
+
         arrayCopy = _strdup(array);
->>>>>>> origin
 
 	while (tokenC != NULL)
         {
