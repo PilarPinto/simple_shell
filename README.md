@@ -7,6 +7,12 @@ Creating our version of a command line interpreter: shell.
 
 ---------------
 
+## What is the shell?
+
+A Unix shell is a command-line interpreter or shell that provides a command line user interface for Unix-like operating systems. The shell is both an interactive command language and a scripting language, and is used by the operating system to control the execution of the system using shell scripts.
+
+- [(https://en.wikipedia.org/wiki/Unix_shell)]
+
 This version of super simple shell support the next built-in
 
 | Command             | Definition                                                                                |
@@ -57,7 +63,9 @@ hsh main.c shell.c test_ls_2
 $
 ```
 
-### Examples
+### Usage Examples
+
+In the terminal, our version of the simple shell looks like this:
 
 ```sh
 $ /bin/ls -l
