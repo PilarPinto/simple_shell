@@ -12,8 +12,12 @@ char **splitInput(char *array)
         char **space;
         char *arrayCopy;
 
+<<<<<<< HEAD
         arrayCopy = strdup(array);
 	tokenC = strtok(arrayCopy, " \n\t");
+=======
+        arrayCopy = _strdup(array);
+>>>>>>> origin
 
 	while (tokenC != NULL)
         {
@@ -80,7 +84,7 @@ void enviromentShell(char **space)
         char **environ;
         int i = 0;
 
-        if (strcmp(space[0], "env") == 0)
+        if (_strcmp(space[0], "env") == 0)
         {
                 while (environ[i] != NULL)
                 {
@@ -98,7 +102,7 @@ void enviromentShell(char **space)
  */
 void exitof(char **space, char *array)
 {
-        if (strcmp(space[0], "exit") == 0)
+        if (_strcmp(space[0], "exit") == 0)
         {
                 free(space);
                 free(array);
