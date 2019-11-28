@@ -41,38 +41,45 @@ char **splitInput(char *array)
 
 
 
+/**
+ * duplicateProcess - Duplicate the calling process
+ * @array: Is the string input
+ * @space: The set of tokens
+ * Return: Nothing
+ */
 void duplicateProcess(char *array, char **space)
 {
-	pid_t my_pid;
-	pid_t pid;
-	int status;
+        pid_t my_pid;
+        pid_t pid;
+        int status;
 
-	pid = fork();
+        pid = fork();
 
-	if (pid > 0)
-	{
-		wait(&status);
-	}
-	else if(pid == -1)
-	{
-		perror("Error:");
-		free(array);
-		free(space);
-		exit(0);
-	}
-	else if (pid == 0)
-	{
-		if ((execve(space[0], space, NULL) == -1))
-		{
-			perror("Does not execute, write valid command");
-			free(array);
-			free(space);
-			exit(0);
-		}
+        if (pid > 0)
+        {
+                wait(&status);
+        }
+        else if (pid == -1)
+        {
+                perror("Error:");
+                free(array);
+                free(space);
+                exit(0);
+        }
+        else if (pid == 0)
+        {
+                if ((execve(space[0], space, NULL) == -1))
+                {
+                        perror("Does not execute, write valid command");
+                        free(array);
+                        free(space);
+                        exit(0);
+                }
 
-	}
+        }
 
 }
+
 
 void enviromentShell(char **space)
 {
