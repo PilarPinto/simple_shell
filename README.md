@@ -14,13 +14,23 @@ This version of super simple shell support the next built-in
 | exit            | Exit the shell with the command exit.                                          |
 | env                 | Print the environment.                                                                    |
 
-This project works in two different modes, the interactive mode and the non interactive mode.
+## Installation
 
-When you use the interactive mode is when you compile with the gcc
+Use the [git clone](https://github.com/PilarPinto/simple_shell.git) to install this super simple shell.
+
+```bash
+git clone https://github.com/PilarPinto/simple_shell.git
+```
+## Compilation
+
+Your code will be compiled this way:
+
 ```bash
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 ```
-and then create and executable file that can use to emulate the simple shell like this
+This project works in two different modes, the interactive mode and the non interactive mode.
+
+With the compilation create an executable file that can use to emulate the simple shell like this in interective mode:
 
 
 ```sh
@@ -31,14 +41,22 @@ hsh main.c shell.c
 ($) exit
 $
 ```
+And also you can emulate the simple shell like this in non-interactive mode:
 
-## Installation
-
-Use the [git clone](https://github.com/PilarPinto/simple_shell.git) to install this super simple shell.
-
-```bash
-git clone https://github.com/PilarPinto/simple_shell.git
+```sh
+$ echo "/bin/ls" | ./hsh
+hsh main.c shell.c test_ls_2
+$
+$ cat test_ls_2
+/bin/ls
+/bin/ls
+$
+$ cat test_ls_2 | ./hsh
+hsh main.c shell.c test_ls_2
+hsh main.c shell.c test_ls_2
+$
 ```
+
 ### Examples
 
 ```sh
@@ -57,11 +75,9 @@ $ hhhhh
 Does not execute, write valid command: No such file or directory
 ```
 
-
 ## Contributing
 You can contribute with this shell adding some buil-int functions, feel free to make pull request.
 
 ## Autors
 - [Lady Marcela Sánchez Moreno](https://github.com/marcewp15)
 - [Pilar Andrea Pinto](https://github.com/PilarPinto)
-
