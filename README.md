@@ -2,10 +2,10 @@
 Creating our version of a command line interpreter: shell.
 
 ![enter image description here](https://lh3.googleusercontent.com/BuM-_w8ugAH-PE3DHEU5866JZ3T888WrKipcQPzpcCBZt9xWSU1SZ5y94BMGoDwWrrSlFUp9MN4 "README")
-- This repository includes our version of the Shell: simple Unix command interpreter, replicates the basic functionalities of the simple shell (sh), here we will apply the knowledge that we have acquired during the learning of the programming language C.
+- This repository includes our version of the Shell: simple Unix command interpreter, replicates the basic functionalities of the simple shell (sh), here we will apply the knowledge that we have acquired during the learning of the programming language C, works with the system call of the Kernel.
 - This project is requested by Holberton School.
 
-Is a project based in C that works with the system call of the Kernel.
+---------------
 
 This version of super simple shell support the next built-in
 
@@ -62,6 +62,6 @@ Does not execute, write valid command: No such file or directory
 You can contribute with this shell adding some buil-int functions, feel free to make pull request.
 
 ## Autors
-[Lady Marcela Sánchez Moreno](https://github.com/marcewp15)
-[Pilar Andrea Pinto](https://github.com/PilarPinto)
+- [Lady Marcela Sánchez Moreno](https://github.com/marcewp15)
+- [Pilar Andrea Pinto](https://github.com/PilarPinto)
 
