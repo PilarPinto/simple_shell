@@ -103,7 +103,6 @@ void enviromentShell(char **space)
 }
 
 
-
 /**
  * exitof - Split the user input
  * @space: The set of tokens
