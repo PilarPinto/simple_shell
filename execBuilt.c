@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * splitInput - Split the user input
  * @array: Is the string input
@@ -7,27 +6,24 @@
  */
 char **splitInput(char *array)
 {
-
-        int counter = 0;
-        char *tokenC;
-        char *token;
+	int counter = 0, i = 0;
+	char *tokenC;
+	char *token;
         char **space;
         char *arrayCopy;
-        int i = 0;
 
         arrayCopy = strdup(array);
+	tokenC = strtok(arrayCopy, " \n\t");
 
-        tokenC = strtok(arrayCopy, " \n\t");
-
-        while (tokenC != NULL)
+	while (tokenC != NULL)
         {
                 tokenC = strtok(NULL, " \n\t");
                 counter++;
         }
         free(arrayCopy);
 
-        space = malloc(sizeof(char *) * (counter + 1));
-        token = strtok(array, " \n\t");
+	space = malloc(sizeof(char *) * (counter + 1));
+	token = strtok(array, " \n\t");
 
         while (token != NULL)
         {
@@ -36,11 +32,8 @@ char **splitInput(char *array)
                 i++;
         }
         space[i] = NULL;
-        return (space);
+	return (space);
 }
-
-
-
 /**
  * duplicateProcess - Duplicate the calling process
  * @array: Is the string input
@@ -75,12 +68,8 @@ void duplicateProcess(char *array, char **space)
                         free(space);
                         exit(0);
                 }
-
         }
-
 }
-
-
 /**
  * enviromentShell - Gives the enviroment
  * @space: Is the set of tokens
@@ -101,8 +90,6 @@ void enviromentShell(char **space)
                 }
         }
 }
-
-
 /**
  * exitof - Split the user input
  * @space: The set of tokens
