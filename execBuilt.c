@@ -81,20 +81,27 @@ void duplicateProcess(char *array, char **space)
 }
 
 
+/**
+ * enviromentShell - Gives the enviroment
+ * @space: Is the set of tokens
+ * Return: Nothing
+ */
 void enviromentShell(char **space)
 {
-	extern char **environ;
-	int i = 0;
-	if(strcmp(space[0], "env") == 0)
-	{
-		while(environ[i] != NULL)
-		{
-			write(STDOUT_FILENO, environ[i], strlen(environ[i]));
-			write(STDOUT_FILENO, "\n", strlen(environ[i]));
-			i++;
-		}
-	}
+        char **environ;
+        int i = 0;
+
+        if (strcmp(space[0], "env") == 0)
+        {
+                while (environ[i] != NULL)
+                {
+                        write(STDOUT_FILENO, environ[i], strlen(environ[i]));
+                        write(STDOUT_FILENO, "\n", strlen(environ[i]));
+                        i++;
+                }
+        }
 }
+
 
 
 void exitof(char **space, char *array)
