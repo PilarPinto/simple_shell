@@ -1,0 +1,22 @@
+.\" Manpage for simple shell Project
+.TH man 1 "21 Nov 2019" "1.0" "simple_shell Project Man Page"
+.SH NAME
+.simple_shell
+\
+simple_shell - simple_shell (hsh) is a simple and basic shell, command-lne interpreter that provides you an interface to the Linux system, permi you execute commands like shell (sh) console command.
+
+Take input when you type a command and execute some functions based on that input and show you the execution of that function in other words: the output command.
+.SH SYNOPSIS
+
+.SH DESCRIPTION
+
+.SH EXAMPLE
+
+.SH SEE ALSO
+
+.SH BUGS
+
+If there is a bug, report to 970@holbertonschool.com or 1101@holbertonschool.com
+.SH AUTHOR
+
+Pilar Pinto and Marcela Sanchez - Students at Holberton School Colombia.
