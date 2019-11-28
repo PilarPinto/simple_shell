@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	int cont, i;
+	int cont;
 	char *buf;
 	char **splitBuf;
 	size_t sizebuf = 1024;
@@ -34,7 +34,6 @@ int main(void)
 			}
 
 			splitBuf = splitInput(buf);
-			i = 0;
 			enviromentShell(splitBuf), exitof(splitBuf, buf);
 			duplicateProcess(buf, splitBuf);
 		}
