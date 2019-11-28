@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "shell.h
 /**
  * splitInput - Split the user input
  * @array: Is the string input
@@ -6,27 +6,25 @@
  */
 char **splitInput(char *array)
 {
-	int counter = 0, i = 0;
-	char *tokenC;
-	char *token;
+        int counter = 0;
+        char *tokenC;
+        char *token;
         char **space;
         char *arrayCopy;
-
-        arrayCopy = strdup(array);
-	tokenC = strtok(arrayCopy, " \n\t");
-
+        int i = 0;
+        
         arrayCopy = _strdup(array);
+        tokenC = strtok(arrayCopy, " \n\t");
 
-	while (tokenC != NULL)
+        while (tokenC != NULL)
         {
                 tokenC = strtok(NULL, " \n\t");
                 counter++;
         }
         free(arrayCopy);
-
-	space = malloc(sizeof(char *) * (counter + 1));
-	token = strtok(array, " \n\t");
-
+        space = malloc(sizeof(char *) * (counter + 1));
+        token = strtok(array, " \n\t");
+        
         while (token != NULL)
         {
                 space[i] = token;
@@ -34,22 +32,21 @@ char **splitInput(char *array)
                 i++;
         }
         space[i] = NULL;
-	return (space);
+        return (space);
 }
 /**
- * duplicateProcess - Duplicate the calling process
- * @array: Is the string input
- * @space: The set of tokens
- * Return: Nothing
- */
+* duplicateProcess - Duplicate the calling process
+* @array: Is the string input
+* @space: The set of tokens
+* Return: Nothing
+*/
 void duplicateProcess(char *array, char **space)
 {
         pid_t my_pid;
         pid_t pid;
         int status;
-
         pid = fork();
-
+        
         if (pid > 0)
         {
                 wait(&status);
@@ -72,6 +69,8 @@ void duplicateProcess(char *array, char **space)
                 }
         }
 }
+
+
 /**
  * enviromentShell - Gives the enviroment
  * @space: Is the set of tokens
@@ -81,7 +80,7 @@ void enviromentShell(char **space)
 {
         char **environ;
         int i = 0;
-
+        
         if (_strcmp(space[0], "env") == 0)
         {
                 while (environ[i] != NULL)
@@ -92,6 +91,8 @@ void enviromentShell(char **space)
                 }
         }
 }
+
+
 /**
  * exitof - Split the user input
  * @space: The set of tokens
@@ -105,5 +106,5 @@ void exitof(char **space, char *array)
                 free(space);
                 free(array);
                 exit(0);
-        }
+	}
 }
